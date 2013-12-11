@@ -26,4 +26,11 @@ describe Currency do
     @currency.convert_to_base(77).should eq(25.641)
   end
 
+  it "Converts from base" do
+    @currency.rate = 2.5
+    @currency.convert_from_base(250).should eq(100)
+    @currency.rate = 0.333
+    @currency.convert_from_base(25.641).should eq(0.333)
+  end
+
 end
