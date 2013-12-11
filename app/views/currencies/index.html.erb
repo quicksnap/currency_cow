@@ -1,1 +1,17 @@
 currencies#index
+<%= form_tag '/converter/convert', remote: true, :id => 'conversion_form' do %>
+  <%= select_tag(
+        :from_country,
+        options_from_collection_for_select(@currencies, :country, :country)
+      ) %>
+  <%= select_tag(
+        :to_country,
+        options_from_collection_for_select(@currencies, :country, :country)
+      ) %>
+  <%= text_field_tag :amount %>
+  <%= submit_tag 'Convert!' %>
+
+<% end %>
+
+<div id="conversion_result">
+</div>
