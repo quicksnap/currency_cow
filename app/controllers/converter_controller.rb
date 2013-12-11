@@ -5,7 +5,7 @@ class ConverterController < ApplicationController
     result = nil
 
     begin
-      # Needs test.
+      # TODO: Needs test.
       from = Currency.find_by(country: params[:from_country])
       to = Currency.find_by(country: params[:to_country])
       from_base = from.convert_to_base params[:amount]
