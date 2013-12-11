@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Currency.create(
+  [
+    { country: "USD", rate: 1 },
+    { country: "JPY", rate: 102.826701 },
+    { country: "EUR", rate: 0.726765 }
+  ]
+);

@@ -32,5 +32,4 @@ describe Currency do
     @currency.rate = 0.3
     @currency.convert_from_base(10).should eq(33.33333)
   end
-
 end
