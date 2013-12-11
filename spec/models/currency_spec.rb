@@ -19,18 +19,18 @@ describe Currency do
     @currency.should be_valid
   end
 
-  it "Converts into the base currency" do
+  it "Converts to base currency to 5 decimal places" do
     @currency.rate = 2.5
     @currency.convert_to_base(100).should eq(250)
-    @currency.rate = 0.333
-    @currency.convert_to_base(77).should eq(25.641)
+    @currency.rate = 0.3
+    @currency.convert_to_base(10).should eq(3)
   end
 
-  it "Converts from base" do
+  it "Converts from base to 5 decimal places" do
     @currency.rate = 2.5
     @currency.convert_from_base(250).should eq(100)
-    @currency.rate = 0.333
-    @currency.convert_from_base(25.641).should eq(0.333)
+    @currency.rate = 0.3
+    @currency.convert_from_base(10).should eq(33.33333)
   end
 
 end
