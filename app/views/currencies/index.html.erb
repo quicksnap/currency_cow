@@ -1,16 +1,26 @@
 <%= form_tag '/converter/convert', remote: true, :id => 'conversion_form' do %>
-  <%= select_tag(
-        :from_country,
-        options_from_collection_for_select(@currencies, :country, :country)
-      ) %>
-  <%= select_tag(
-        :to_country,
-        options_from_collection_for_select(@currencies, :country, :country)
-      ) %>
-  <%= text_field_tag :amount %>
-  <%= submit_tag 'Convert!' %>
+  <div class="convert-from-wrap">
+    <%= label_tag :amount, 'Convert', class: 'lbl-convert lbl' %>
+    <%= text_field_tag :amount, nil, value: 0, class: 'ui-widget ui-widget-content', type: 'number' %>
+    <%= select_tag(
+          :from_country,
+          options_from_collection_for_select(@currencies, :country, :country)
+        ) %>
+  </div>
+  <div class="convert-to-wrap">
+    <%= label_tag :to_country, 'To', class: 'lbl-to lbl' %>
+    <%= select_tag(
+          :to_country,
+          options_from_collection_for_select(@currencies, :country, :country)
+        ) %>
+  </div>
+
+  <div class="convert-submit-wrap">
+    <%= submit_tag 'Convert!' %>
+  </div>
 
 <% end %>
 
 <div id="conversion_result">
+  &nbsp;
 </div>

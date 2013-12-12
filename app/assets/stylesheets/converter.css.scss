@@ -1,3 +1,92 @@
 // Place all the styles related to the converter controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  width: 100%;
+  position: relative;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #ddd;
+  background-image: image-url('cow-pattern.jpg');
+}
+
+.container {
+  width: 960px;
+
+  border: 3px solid #ccc;
+  border-radius: 15px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 3.5em;
+}
+
+// Panels
+.lbl {display: block; text-transform: uppercase;}
+.convert-from-wrap {
+  width: 620px;
+  float: left;
+}
+.convert-to-wrap {
+  width: 340px;
+  float: right;
+}
+.convert-submit-wrap {
+  clear:both;
+}
+
+.convert-submit-wrap input {
+  width: 75%;
+  font-size: 0.7em;
+  color: #ffffff;
+  background-color: #48c9b0;
+  border-color: #48c9b0;
+  border-style: inherit;
+  border-radius: 3px;
+}
+.convert-submit-wrap input:hover {
+  cursor: pointer;
+}
+.convert-submit-wrap input:active,
+.convert-submit-wrap input:focus { outline: none; }
+
+.ui-combobox {
+  display: inline-block;
+  margin: 0;
+  margin-right: 1.8em;
+  position: relative;
+}
+.ui-combobox-input { padding: 0.2em; margin: 0; }
+.ui-combobox-button {
+  position: absolute;
+  width: 1.8em !important;
+  margin: 0;
+  margin-left: -1px;
+  top: 0;
+  bottom: 0;
+}
+.ui-combobox-button .ui-button-text { padding: 0em; }
+.ui-combobox .ui-autocomplete {
+  max-height: 10em;
+  font-size:0.5em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ui-combobox .ui-button {
+  font-size: 2em;
+  vertical-align: top;
+  width: 1em !important;
+}
+.ui-combobox .ui-autocomplete-input {
+  margin-bottom: 0;
+  // padding-bottom: 0;
+  width: 3em;
+}
+.ui-widget:focus {
+  outline: none; /* Hate.. outlines..*/
+}
+
+#amount { width: 4em; height: 1.6em; vertical-align: top; }

@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-desc "Update the rate table"
+desc "Update the rate table. Usage: API_KEY=xxxx rake update_rates"
 task :update_rates => :environment do |t|
   if ENV['API_KEY'].nil?
     puts "Please set API_KEY=xxxx for openexchangerates."
