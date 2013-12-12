@@ -13,9 +13,12 @@ task :update_rates => :environment do |t|
   response = Net::HTTP.get_response domain, path
   parsed = JSON.parse response.body
 
+  updated = 0
+
   parsed['rates'].each do |key,val|
     currency = Currency.find_or_create_by(country: key)
     currency.rate = val
-    currency.save
+    updated += 1 if currency.save
   end
+  puts "Updated or created #{updated} exchange rates."
 end
